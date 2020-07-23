@@ -37,13 +37,14 @@ function doTemperature () {
 }
 function doCompass () {
     while (true) {
-        basic.showNumber(input.compassHeading())
-        basic.pause(1000)
-        basic.clearScreen()
         if (input.compassHeading() > 315 || input.compassHeading() < 45) {
             basic.showString("N")
+        } else if (input.compassHeading() < 135) {
+            basic.showString("E")
+        } else if (input.compassHeading() < 225) {
+            basic.showString("S")
         } else {
-        	
+            basic.showString("W")
         }
     }
 }
