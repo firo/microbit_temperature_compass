@@ -2,7 +2,8 @@ function doStart () {
     list = [1, 2, 3]
     listCur = 0
     while (menu_home == true) {
-        basic.showIcon(IconNames.Happy)
+        led.plotBrightness(randint(0, 4), randint(0, 4), randint(0, 255))
+        basic.pause(100)
     }
 }
 function showNext () {
