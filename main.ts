@@ -89,9 +89,11 @@ input.onButtonPressed(Button.B, function () {
     showNext()
 })
 input.onGesture(Gesture.Shake, function () {
-    randomNumber13 = randint(0, 3)
-    basic.clearScreen()
-    doStoneScissorPaper()
+    if (listCur == 3) {
+        randomNumber13 = randint(0, 3)
+        basic.clearScreen()
+        doStoneScissorPaper()
+    }
 })
 let randomNumber13 = 0
 let listCur = 0
