@@ -20,9 +20,37 @@ input.onButtonPressed(Button.A, function () {
     } else if (listCur == 2) {
         doCompass()
     } else {
-    	
+        doStoneScissorPaper()
     }
 })
+function doStoneScissorPaper () {
+    menu_home = false
+    if (randomNumber13 == 1) {
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # # # .
+            . # # # .
+            . . . . .
+            `)
+    } else if (randomNumber13 == 2) {
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+    } else {
+        basic.showLeds(`
+            # . . . #
+            . # . # .
+            . . # . .
+            # # . # .
+            # # . # #
+            `)
+    }
+}
 function doTemperature () {
     menu_home = false
     while (listCur == 1) {
@@ -60,6 +88,12 @@ input.onButtonPressed(Button.B, function () {
     menu_home = false
     showNext()
 })
+input.onGesture(Gesture.Shake, function () {
+    randomNumber13 = randint(0, 3)
+    basic.clearScreen()
+    doStoneScissorPaper()
+})
+let randomNumber13 = 0
 let listCur = 0
 let list: number[] = []
 let menu_home = false
