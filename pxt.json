@@ -1,5 +1,6 @@
 {
     "name": "Microbit_Temperature_Compass",
+    "version": "1.0.0",
     "description": "",
     "dependencies": {
         "core": "*",
